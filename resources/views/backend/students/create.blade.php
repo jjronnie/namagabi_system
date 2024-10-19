@@ -189,12 +189,13 @@
 
 
 
-          
+
 
         </div>
         <!-- content-wrapper ends -->
         <!-- partial:partials/_footer.html -->
-       @include('backend.layouts.footer')
+        @include('backend.layouts.footer')
+
         <!-- partial -->
       </div>
       <!-- main-panel ends -->
