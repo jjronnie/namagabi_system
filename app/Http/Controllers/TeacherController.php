@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Student;
+use App\Models\Teacher;
 use Illuminate\Http\Request;
 
-class StudentController extends Controller
+class TeacherController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,11 +14,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        //we can use this incase we dont have a pagination by default ----->$students = Student::pagination();
-        $students = Student::all();
-        return view('backend.students.index',compact('students'));
-        
-
+        //
     }
 
     /**
@@ -29,7 +25,7 @@ class StudentController extends Controller
     public function create()
     {
         //
-        return view('backend.students.create');
+        return view('backend.teachers.create');       
     }
 
     /**
@@ -41,35 +37,34 @@ class StudentController extends Controller
     public function store(Request $request)
     {
         //
-        $student = new Student();
-        $student->student_name = $request->input('student_name');
-        $student->student_level = $request->input('student_level');
-        $student->age = $request->input('age');
-        $student->save();
+        $teacher = new Teacher();
+        $teacher->teacher_name = $request->input('teacher_name');
+        $teacher->teacher_level = $request->input('teacher_level');
+        $teacher->age = $request->input('age');
+        $teacher->save();
         return redirect()->back();
+
+
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Teacher $teacher)
     {
         //
-        $student = Student::findOrFail($id);
-        return view('backend.students.show',compact('student'));
-
     }
 
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function edit(Student $student)
+    public function edit(Teacher $teacher)
     {
         //
     }
@@ -78,10 +73,10 @@ class StudentController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Student $student)
+    public function update(Request $request, Teacher $teacher)
     {
         //
     }
@@ -89,10 +84,10 @@ class StudentController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Student  $student
+     * @param  \App\Models\Teacher  $teacher
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Student $student)
+    public function destroy(Teacher $teacher)
     {
         //
     }

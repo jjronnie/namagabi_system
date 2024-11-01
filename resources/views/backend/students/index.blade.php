@@ -192,29 +192,48 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Student Registration Form</h4>
+                  <h4 class="card-title">Registered Students</h4>
                   <p class="card-description">
-                    Enter Student Details
+                    List of Registered Students
                   </p>
-                  <form class="forms-sample" action="{{route('student.store')}}" method="POST">
-                    @csrf
+                  <div class="row">
+                    <div class="col-12">
+                      <div class="table-responsive">
+                        <table id="order-listing" class="table">
+                          <thead>
+                            <tr>
+                                <th>ID #</th>
+                                <th>Student Name</th>
+                                <th>Student Level</th>
+                                <th>Age</th>                                
+                                <th>Actions</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            @foreach ($students as $student)
+                                
+                           
+                            <tr>
+                                <td>{{ $student->id}}</td>
+                                <td>{{ $student->student_name}}</td>
+                                <td>{{ $student->student_level}}</td>
+                                <td>{{ $student->age}}</td>                                
+                                <td>
+                                  <a href="{{route('student.show',$student->id)}}" class="btn btn-outline-primary">View</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                           
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  </div>
 
-                    <div class="form-group">
-                      <label for="exampleInputUsername1">Student Name</label>
-                      <input type="text" class="form-control" name="student_name" placeholder="Enter Student Name">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Student Level</label>
-                      <input type="text" class="form-control" name="student_level" placeholder="Enter Student Level">
-                    </div>
-                    <div class="form-group">
-                      <label for="exampleInputPassword1">Student Age</label>
-                      <input type="text" class="form-control" name="age" placeholder="Student Age">
-                    </div>
-                   
-                    <button type="submit" class="btn btn-primary mr-2">Register</button>
-                    <button class="btn btn-light">Cancel</button>
-                  </form>
+
+
+                 
+
                 </div>
               </div>
             </div>

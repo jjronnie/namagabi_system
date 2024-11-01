@@ -192,16 +192,16 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Student Registration Form</h4>
+                  <h4 class="card-title">Edit Student Form</h4>
                   <p class="card-description">
-                    Enter Student Details
+                    Edit
                   </p>
-                  <form class="forms-sample" action="{{route('student.store')}}" method="POST">
+                  <form class="forms-sample" action="" method="POST">
                     @csrf
 
                     <div class="form-group">
                       <label for="exampleInputUsername1">Student Name</label>
-                      <input type="text" class="form-control" name="student_name" placeholder="Enter Student Name">
+                      <input type="text" class="form-control" value="{{$student->student_name}}" readonly name="student_name" placeholder="Enter Student Name">
                     </div>
                     <div class="form-group">
                       <label for="exampleInputEmail1">Student Level</label>

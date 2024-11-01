@@ -192,24 +192,24 @@
             <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <h4 class="card-title">Student Registration Form</h4>
+                  <h4 class="card-title">Teacher Registration Form</h4>
                   <p class="card-description">
-                    Enter Student Details
+                    Enter Teacher Details
                   </p>
-                  <form class="forms-sample" action="{{route('student.store')}}" method="POST">
+                  <form class="forms-sample" action="{{route('teacher.store')}}" method="POST">
                     @csrf
 
                     <div class="form-group">
-                      <label for="exampleInputUsername1">Student Name</label>
-                      <input type="text" class="form-control" name="student_name" placeholder="Enter Student Name">
+                      <label for="exampleInputUsername1">Teacher Name</label>
+                      <input type="text" class="form-control" name="teacher_name" placeholder="Enter Teacher Name">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputEmail1">Student Level</label>
-                      <input type="text" class="form-control" name="student_level" placeholder="Enter Student Level">
+                      <label for="exampleInputEmail1">Teacher Level</label>
+                      <input type="text" class="form-control" name="teacher_level" placeholder="Enter Teacher Level">
                     </div>
                     <div class="form-group">
-                      <label for="exampleInputPassword1">Student Age</label>
-                      <input type="text" class="form-control" name="age" placeholder="Student Age">
+                      <label for="exampleInputPassword1">Teacher Age</label>
+                      <input type="text" class="form-control" name="age" placeholder="teacher Age">
                     </div>
                    
                     <button type="submit" class="btn btn-primary mr-2">Register</button>
